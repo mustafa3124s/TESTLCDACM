@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Models</h1>
+
+    <!-- حقل البحث (إنكليزي إجباري) -->
+    <input
+        type="text"
+        id="search"
+        class="search-input"
+        placeholder="🔍 Search model..."
+        lang="en"
+        inputmode="latin"
+        autocomplete="off"
+        onkeyup="filterModels()"
+    >
+
+    <div id="models" class="model-list"></div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3 id="modal-title"></h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Matching Models</th>
+                </tr>
+            </thead>
+            <tbody id="modal-body"></tbody>
+        </table>
+
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script src="models.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* ===== إعدادات عامة ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    direction: ltr;
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    text-align: center;
+    padding: 30px 20px 40px; /* قللنا الفراغ فوق */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* يبدي من فوق */
+}
+
+
+h1 {
+    margin-top: 10px;
+}
+
+
+p {
+    margin-top: 0;
+    opacity: 0.85;
+}
+
+/* ===== الصفحة الرئيسية (شاشة / بطارية) ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255,255,255,0.12);
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card h3 {
+    margin-top: 12px;
+    font-size: 22px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.25);
+}
+
+/* ===== صفحة الشركات ===== */
+.brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.brand {
+    background: rgba(255,255,255,0.15);
+    border-radius: 25px;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(255,255,255,0.3);
+}
+
+.brand img {
+    width: 130px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.brand span {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+/* ===== صفحة الموديلات ===== */
+.model-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.model-card {
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.model-card:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.05);
+}
+
+/* ===== البحث ===== */
+input {
+    padding: 12px 18px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* ===== النافذة المنبثقة (Modal) ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 22px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== الجدول ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 15px;
+}
+
+th {
+    background: #2c5364;
+    color: white;
+}
+
+/* ===== زر الإغلاق ===== */
+.close-btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #2c5364;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #00c6ff;
+}
+
+/* البحث دايمًا إنكليزي */
+.search-input {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: plaintext;
+}

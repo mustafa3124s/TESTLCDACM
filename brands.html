@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>الشركات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose the brand</h1>
+
+    <div class="brands">
+        <div class="brand" onclick="selectBrand('xiaomi')">
+            <img src="images/xiaomi.png" alt="Xiaomi">
+            <span>BATTERY</span>
+        </div>
+
+        <div class="brand" onclick="selectBrand('infinix')">
+            <img src="images/infinix.png" alt="Infinix">
+            <span>LCD</span>
+        </div>
+
+        <div class="brand" onclick="selectBrand('tecno')">
+            <img src="images/tecno.png" alt="Tecno">
+            <span>CHARGE BOARD</span>
+        </div>
+
+        <div class="brand" onclick="selectBrand('huawei')">
+            <img src="images/huawei.png" alt="Huawei">
+            <span>MAIN FLEX</span>
+        </div>
+
+        <div class="brand" onclick="selectBrand('oppo')">
+            <img src="images/oppo.png" alt="Oppo">
+            <span>IC</span>
+        </div>
+
+        <div class="brand" onclick="selectBrand('realme')">
+            <img src="images/realme.png" alt="Realme">
+            <span>OTHER</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function selectBrand(brand) {
+    localStorage.setItem("brand", brand);
+    window.location.href = "models.html";
+}
+</script>
+
+</body>
+</html>
