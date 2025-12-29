@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACM FOR MOBILE SPARE PARTS</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #e0e0e0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        position: relative;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        padding: 40px 30px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .shine {
+        position: absolute;
+        top: 0; left: 0;
+        width: 200%; height: 200%;
+        pointer-events: none;
+        background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
+        transform: translate(-50%, -50%) rotate(25deg);
+        transition: transform 0.1s;
+    }
+
+    .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+        color: #1c1c1e;
+        letter-spacing: 1px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin: 10px 0;
+        color: #2c2c2e;
+    }
+
+    iframe {
+        border: none;
+        width: 100%;
+        height: 280px;
+        border-radius: 15px;
+        margin: 25px 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+
+    iframe:hover { transform: scale(1.02); }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .buttons a {
+        text-decoration: none;
+        color: #fff;
+        padding: 14px 25px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1em;
+        flex: 1;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .buttons a:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp { background: linear-gradient(135deg, #25D366, #1ebea5); }
+    .telegram { background: linear-gradient(135deg, #0088cc, #00c6ff); }
+    .call { background: linear-gradient(135deg, #0a3d62, #3c6382); }
+    .email { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+
+    @media (max-width: 400px) { .buttons { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<div class="container" id="card">
+    <div class="shine" id="shine"></div>
+    <h1>ACM FOR MOBILE SPARE PARTS</h1>
+    <p>📍 عنوان المحل: بغداد شارع الربيعي الفرع المقابل لبناية بغداد (فرع القوس الذهبي)</p>
+    <p>📞 رقم الهاتف: 07708087360</p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3333.8905034290487!2d44.45128162380393!3d33.32167797344088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155783acb12a0fff%3A0x114142199f7938cb!2zQUNNINmE2YLYt9i5INi62YrYp9ixINin2YTZhdmI2KjYp9mK2YQ!5e0!3m2!1sar!2siq!4v1767039842825!5m2!1sar!2siq" allowfullscreen="" loading="lazy"></iframe>
+
+    <div class="buttons">
+        <a class="whatsapp" href="https://wa.me/07708087360" target="_blank">💬 واتس اب</a>
+        <a class="telegram" href="https://t.me/acmformobile" target="_blank">📨 تلجرام</a>
+        <a class="call" href="tel:07708087360">📞 اتصال</a>
+        <a class="email" href="mailto:info@acm-mobile.com" target="_blank">✉️ بريد إلكتروني</a>
+    </div>
+</div>
+
+<script>
+const card = document.getElementById('card');
+const shine = document.getElementById('shine');
+
+card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const moveX = (x / rect.width) * 200 - 100;
+    const moveY = (y / rect.height) * 200 - 100;
+
+    shine.style.transform = `translate(${moveX}px, ${moveY}px) rotate(25deg)`;
+});
+</script>
+
+</body>
+</html>
