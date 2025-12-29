@@ -4,7 +4,13 @@ function selectType(type) {
         window.location.href = "brands.html";
     } else if(type === 'battery') {
         alert("قيد التحديث");
-    } else {
+    }
+
+      else if(type === 'contact') {
+        window.location.href = "contact.html";
+    }
+
+ else {
         console.log("نوع غير معروف");
     }
 }
